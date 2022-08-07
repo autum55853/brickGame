@@ -3,6 +3,8 @@
 const _canvas = document.querySelector('.drawCanvas');
 const start=document.querySelector('.btnStart');
 const gamer=document.querySelector('.gamer');
+const blank=document.querySelector('.blank');
+const table=document.querySelector('.table');
 const listData=document.querySelector('.listData');
 
 let record={};
@@ -192,11 +194,11 @@ function storageGame(){
 function listResult(){
     const getRecords=localStorage.getItem('GameRecord');
     const recordData=JSON.parse(getRecords);
-    console.log(getRecords);
+    //console.log(recordData.length);
     function updatedList(){
       let items='';
       for (let i = 0; i < recordData.length; i++) {
-        items +=`<tr class="list-border text-center">
+        items +=`<tr class="text-center">
           <th scope="row" data-num="${i+1}">${i+1}</th>
           <td>${recordData[i].name}</td>
           <td>${recordData[i].score}</td>
@@ -207,11 +209,11 @@ function listResult(){
     updatedList();
 };
 function checkLocalStorage(){
-    if(window.localStorage.lenth!==0){
+    if(window.localStorage.length!==0){
       listResult();
     } else{ //以下不會執行
-      document.querySelector('.table').classList.add("d-none");
-      document.querySelector('.content').innerHTML=`<p>目前沒有任何遊戲紀錄</p>`;
+        table.classList.add('none');
+        blank.innerHTML=`<p>目前沒有任何遊戲紀錄</p>`;
     
     };
   };
@@ -272,7 +274,7 @@ function draw() {
 };
 
 function init(){
-    listResult();
+    checkLocalStorage();
     if (_canvas.getContext) { //判斷是否支援
         //宣告ctx渲染方式
         let ctx = _canvas.getContext('2d');
