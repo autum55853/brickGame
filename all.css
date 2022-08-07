@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.brickGame {
+  width: 100%;
+  height: 800px;
+  background-image: url("https://images.unsplash.com/photo-1560827312-966a8c259b49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.brickGame h1 {
+  font-size: 100px;
+  color: #D7DBDD;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.brickGame button {
+  font-size: 40px;
+  color: blue;
+  border: #D7DBDD 15px outset;
+  padding: 30px;
+  border-radius: 50%;
+  width: 60%;
+  margin: 0 auto;
+}
+
+button:hover {
+  cursor: pointer;
+  border-style: inset;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  color: gold;
+  text-align: center;
+}
+
+.gamer {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: antiquewhite;
+  color: blue;
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: gold 10px solid;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.background {
+  margin: 0 auto;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20%;
+  margin-bottom: 50px;
+}
+
+.table {
+  max-width: 90%;
+  margin-top: 10px;
+}
+
+.table .tableTitle, .table .listData {
+  font-size: 36px;
+  color: #D7DBDD;
+  text-align: center;
+}
+
+th, tbody {
+  width: 200px;
+}
+
+.drawCanvas {
+  display: none;
+}
+
+.none {
+  display: none;
+}
+
+body .show {
+  display: block;
+  background: #eee;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=all.css.map */
