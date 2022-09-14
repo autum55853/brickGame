@@ -11,6 +11,7 @@ let record={};
 let recordAry=[];
 
 
+
 //該函數用來改變畫布大小
 function resizeCanvas(){
     _canvas.setAttribute('width',window.innerWidth);
@@ -42,14 +43,14 @@ let leftPressed = false;
 
 //定義磚塊:每塊磚的寬度=100+20
 let brickRowCount = 3;
-let brickColumnCount = 12;
+let brickColumnCount = 8;
 const brickWidth = 100;
 const brickHeight = 30;
 const brickPadding = 20;
 
 //磚塊與畫面上方/左方的距離
 const brickOffsetTop = 50;
-const brickOffsetLeft = 250;
+const brickOffsetLeft = 300;
 let bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
@@ -191,10 +192,12 @@ function storageGame(){
     localStorage.setItem('GameRecord',stringRecord);
 }
 
+
 function listResult(){
     const getRecords=localStorage.getItem('GameRecord');
     const recordData=JSON.parse(getRecords);
-    //console.log(recordData.length);
+    recordAry=recordData;
+    //console.log(recordAry);
     function updatedList(){
       let items='';
       for (let i = 0; i < recordData.length; i++) {
@@ -244,13 +247,22 @@ function draw() {
             lifes--;
             if(!lifes) {
                 alert("GAME OVER");
-                //localstorage儲存分數
-                record.score=score;
-                recordAry.push(record);
-                storageGame();
-                //console.log(recordAry);
-                document.location.reload();
-                listResult();
+                console.log(recordAry.length);
+                if(window.localStorage.length>=5){
+                    localStorage.clear();
+                    record.score=score;
+                    recordAry.push(record);
+                    storageGame();
+                    document.location.reload();
+                    checkLocalStorage();
+                } else{
+                    //localstorage儲存分數
+                    record.score=score;
+                    recordAry.push(record);
+                    storageGame();
+                    document.location.reload();
+                    checkLocalStorage();
+                }
             }
             else {
                 x = _canvas.width/2;
